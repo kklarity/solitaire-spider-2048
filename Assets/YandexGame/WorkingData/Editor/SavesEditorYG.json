@@ -1,0 +1,199 @@
+{
+  "idSave": 523,
+  "isFirstSession": false,
+  "language": "ru",
+  "promptDone": false,
+  "highScore": 12150,
+  "currentScore": 12150,
+  "gameObjectDataList": [
+    {
+      "position": {
+        "x": 1.49958491,
+        "y": -2.58621788,
+        "z": 0.0
+      },
+      "suit": "Spades",
+      "rank": 3
+    },
+    {
+      "position": {
+        "x": -0.7499924,
+        "y": -2.58553529,
+        "z": 0.0
+      },
+      "suit": "Spades",
+      "rank": 3
+    },
+    {
+      "position": {
+        "x": 1.49989569,
+        "y": -3.27802229,
+        "z": 0.0
+      },
+      "suit": "Spades",
+      "rank": 4
+    },
+    {
+      "position": {
+        "x": -0.74928087,
+        "y": -3.27743244,
+        "z": 0.0
+      },
+      "suit": "Spades",
+      "rank": 6
+    },
+    {
+      "position": {
+        "x": 0.749932051,
+        "y": -3.957821,
+        "z": 0.0
+      },
+      "suit": "Hearts",
+      "rank": 6
+    },
+    {
+      "position": {
+        "x": -1.50002789,
+        "y": -3.96578383,
+        "z": 0.0
+      },
+      "suit": "Hearts",
+      "rank": 7
+    },
+    {
+      "position": {
+        "x": 2.249923,
+        "y": -4.64969349,
+        "z": 0.0
+      },
+      "suit": "Hearts",
+      "rank": 9
+    },
+    {
+      "position": {
+        "x": -0.749953866,
+        "y": -3.96626377,
+        "z": 0.0
+      },
+      "suit": "Spades",
+      "rank": 7
+    },
+    {
+      "position": {
+        "x": 1.49999928,
+        "y": -4.651954,
+        "z": 0.0
+      },
+      "suit": "Spades",
+      "rank": 9
+    },
+    {
+      "position": {
+        "x": -0.749967158,
+        "y": -4.651902,
+        "z": 0.0
+      },
+      "suit": "Spades",
+      "rank": 8
+    },
+    {
+      "position": {
+        "x": 0.7499703,
+        "y": -4.649661,
+        "z": 0.0
+      },
+      "suit": "Hearts",
+      "rank": 9
+    },
+    {
+      "position": {
+        "x": 2.87315561E-05,
+        "y": -4.65132666,
+        "z": 0.0
+      },
+      "suit": "Spades",
+      "rank": 9
+    },
+    {
+      "position": {
+        "x": -1.49996221,
+        "y": -4.6519804,
+        "z": 0.0
+      },
+      "suit": "Hearts",
+      "rank": 8
+    },
+    {
+      "position": {
+        "x": 1.499979,
+        "y": -3.96570373,
+        "z": 0.0
+      },
+      "suit": "Spades",
+      "rank": 5
+    },
+    {
+      "position": {
+        "x": -2.24994946,
+        "y": -4.649661,
+        "z": 0.0
+      },
+      "suit": "Hearts",
+      "rank": 8
+    },
+    {
+      "position": {
+        "x": -2.24997,
+        "y": -3.957821,
+        "z": 0.0
+      },
+      "suit": "Hearts",
+      "rank": 6
+    },
+    {
+      "position": {
+        "x": -6.927396E-05,
+        "y": -3.96337914,
+        "z": 0.0
+      },
+      "suit": "Spades",
+      "rank": 7
+    },
+    {
+      "position": {
+        "x": -1.49989164,
+        "y": -3.27774549,
+        "z": 0.0
+      },
+      "suit": "Hearts",
+      "rank": 6
+    },
+    {
+      "position": {
+        "x": -1.49984932,
+        "y": -2.58676457,
+        "z": 0.0
+      },
+      "suit": "Hearts",
+      "rank": 4
+    },
+    {
+      "position": {
+        "x": 5.19472524E-05,
+        "y": -3.27276921,
+        "z": 0.0
+      },
+      "suit": "Spades",
+      "rank": 6
+    },
+    {
+      "position": {
+        "x": 2.249869,
+        "y": -3.957909,
+        "z": 0.0
+      },
+      "suit": "Hearts",
+      "rank": 7
+    }
+  ]
+}
