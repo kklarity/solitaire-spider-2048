@@ -16,5 +16,6 @@ namespace YG
         public int highScore = 0;
         public int currentScore = 0;
         public List<GameObjectData> gameObjectDataList = new();
+        public bool isFirstStart = true;
     }
 }

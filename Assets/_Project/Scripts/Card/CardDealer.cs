@@ -109,5 +109,27 @@ namespace _Project.Scripts.Card
             cardObject.GetComponent<SpriteRenderer>().sprite = sprite;
             return cardObject;
         }
+        
+        public void SpawnSpecificCardsAtPositions(GameObject cardPrefab, Vector3[] positions)
+        {
+            Card[] cards = new Card[]
+            {
+                new Card("Hearts", 2),
+                new Card("Spades", 2),
+                new Card("Hearts", 3),
+                new Card("Spades", 4),
+                new Card("Hearts", 2),
+                new Card("Spades", 3),
+                new Card("Hearts", 4)
+            };
+
+            for (int i = 0; i < positions.Length; i++)
+            {
+                var card = cards[i];
+                var sprite = Resources.Load<Sprite>($"Sprites/{card.Rank}{card.Suit[0].ToString().ToLower()}");
+                SpawnCardWithSprite(cardPrefab, positions[i], card, sprite);
+            }
+        }
+
     }
 }

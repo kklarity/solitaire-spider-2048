@@ -101,7 +101,6 @@ namespace _Project.Scripts.Card
             transform.localScale = Vector3.zero;
             // var scale = 0.6f + (Card.Rank - 2) * 0.1f;
             var scale = 0.7f;
-            // print("My scale is: " + scale);
 
             if (transform != null)
             {
