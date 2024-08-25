@@ -1,15 +1,15 @@
 {
-  "idSave": 38,
+  "idSave": 13,
   "isFirstSession": false,
   "language": "ru",
   "promptDone": false,
-  "highScore": 720,
-  "currentScore": 720,
+  "highScore": 230,
+  "currentScore": 230,
   "gameObjectDataList": [
     {
       "position": {
-        "x": 2.249693,
-        "y": -3.30616426,
+        "x": 0.75,
+        "y": -3.85962081,
         "z": 0.0
       },
       "suit": "Hearts",
@@ -17,76 +17,80 @@
     },
     {
       "position": {
-        "x": -1.49995613,
-        "y": -3.308222,
+        "x": -9.617197E-15,
+        "y": -4.547466,
         "z": 0.0
       },
       "suit": "Spades",
+      "rank": 5
+    },
+    {
+      "position": {
+        "x": -0.75,
+        "y": -4.54881525,
+        "z": 0.0
+      },
+      "suit": "Hearts",
+      "rank": 4
+    },
+    {
+      "position": {
+        "x": 1.5,
+        "y": -4.54881525,
+        "z": 0.0
+      },
+      "suit": "Spades",
+      "rank": 4
+    },
+    {
+      "position": {
+        "x": 2.25,
+        "y": -3.854123,
+        "z": 0.0
+      },
+      "suit": "Hearts",
+      "rank": 4
+    },
+    {
+      "position": {
+        "x": -2.25,
+        "y": -4.548887,
+        "z": 0.0
+      },
+      "suit": "Hearts",
+      "rank": 2
+    },
+    {
+      "position": {
+        "x": 2.24999976,
+        "y": -4.54892826,
+        "z": 0.0
+      },
+      "suit": "Hearts",
+      "rank": 5
+    },
+    {
+      "position": {
+        "x": -1.49997377,
+        "y": -4.54881525,
+        "z": 0.0
+      },
+      "suit": "Spades",
+      "rank": 4
+    },
+    {
+      "position": {
+        "x": 0.7496822,
+        "y": -4.550956,
+        "z": 0.0
+      },
+      "suit": "Hearts",
       "rank": 3
-    },
-    {
-      "position": {
-        "x": 2.24998355,
-        "y": -4.00094271,
-        "z": 0.0
-      },
-      "suit": "Hearts",
-      "rank": 6
-    },
-    {
-      "position": {
-        "x": -2.19786648E-06,
-        "y": -3.997824,
-        "z": 0.0
-      },
-      "suit": "Spades",
-      "rank": 6
-    },
-    {
-      "position": {
-        "x": -2.24966359,
-        "y": -3.99806428,
-        "z": 0.0
-      },
-      "suit": "Hearts",
-      "rank": 5
-    },
-    {
-      "position": {
-        "x": 0.7499696,
-        "y": -3.99785638,
-        "z": 0.0
-      },
-      "suit": "Hearts",
-      "rank": 6
-    },
-    {
-      "position": {
-        "x": 1.49999082,
-        "y": -3.99942183,
-        "z": 0.0
-      },
-      "suit": "Spades",
-      "rank": 5
-    },
-    {
-      "position": {
-        "x": -0.7499873,
-        "y": -3.99805617,
-        "z": 0.0
-      },
-      "suit": "Hearts",
-      "rank": 5
-    },
-    {
-      "position": {
-        "x": -1.49996614,
-        "y": -4.001703,
-        "z": 0.0
-      },
-      "suit": "Spades",
-      "rank": 5
     }
   ],
-  "isFirstStart": false
+  "FutureCardSpritePath": null,
+  "FutureCard": {
+    "Suit": "Spades",
+    "Rank": 2
+  }
 }

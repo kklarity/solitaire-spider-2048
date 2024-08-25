@@ -17,7 +17,6 @@ namespace _Project.Scripts.Score
         [SerializeField] private TextMeshProUGUI _highScoreText;
         
         [SerializeField] private AudioSource _boop;
-        [SerializeField] private ParticleSystem _particleSystem;
 
 
         private void Awake()
@@ -83,7 +82,6 @@ namespace _Project.Scripts.Score
             _score += points;
             _scoreText.text = _score.ToString();
             YandexGame.savesData.currentScore = _score;
-            _particleSystem.Play();
     
             if (_score > YandexGame.savesData.highScore)
             {

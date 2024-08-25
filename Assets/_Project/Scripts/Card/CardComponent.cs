@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections;
-using _Project.Scripts.Score;
+﻿using _Project.Scripts.Score;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace _Project.Scripts.Card
 {
@@ -46,6 +43,8 @@ namespace _Project.Scripts.Card
             nextCardPrefab = null;
         }
 
+       
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
             var otherCardComponent = collision.gameObject.GetComponent<CardComponent>();
@@ -83,7 +82,7 @@ namespace _Project.Scripts.Card
                         
                     }
                 }
-                if (Card.Rank == 15 && Card.Rank == otherCard.Rank)
+                if (Card.Rank == 14 && Card.Rank == otherCard.Rank)
                 {
                     ScoreManager.Instance.Add10K(10000);
                 }

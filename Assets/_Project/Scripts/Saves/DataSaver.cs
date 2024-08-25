@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using _Project.Scripts.Card;
+using Newtonsoft.Json;
 using UnityEngine;
 using YG;
 
@@ -35,20 +37,22 @@ namespace _Project.Scripts.Saves
     public class DataSaver : MonoBehaviour
     {
         // Coroutine for update leaderboard
-        // private void Start()
-        // {
-        //     StartCoroutine(SaveLeaderBoard());
-        // }
+        private void Start()
+        {
+            StartCoroutine(SaveLeaderBoard());
+        }
 
-        // private void OnEnable()
-        // {
-        //     YandexGame.GetDataEvent += GetLeaderBoard;
-        // }
-        //
-        // private void OnDisable()
-        // {
-        //     YandexGame.GetDataEvent -= GetLeaderBoard;
-        // }
+        private void OnEnable()
+        {
+            YandexGame.GetDataEvent += GetLeaderBoard;
+        }
+        
+        private void OnDisable()
+        {
+            YandexGame.GetDataEvent -= GetLeaderBoard;
+        }
+        
+        
 
         private void GetLeaderBoard()
         {
@@ -57,6 +61,7 @@ namespace _Project.Scripts.Saves
 
         public static void SaveGameObjects(SavesYG saves)
         {
+            
             YandexGame.savesData.gameObjectDataList = saves.gameObjectDataList;
             YandexGame.SaveProgress();
             // Debug.Log("Game objects saved: " + saves.gameObjectDataList.Count);
@@ -66,7 +71,6 @@ namespace _Project.Scripts.Saves
         {
             var saves = new SavesYG();
             saves.gameObjectDataList = YandexGame.savesData.gameObjectDataList ?? new List<GameObjectData>();
-            // Debug.Log("Game objects loaded: " + saves.gameObjectDataList.Count);
             return saves;
         }
 

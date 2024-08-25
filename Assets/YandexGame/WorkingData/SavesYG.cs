@@ -1,6 +1,8 @@
 ﻿
 using System.Collections.Generic;
+using _Project.Scripts.Card;
 using _Project.Scripts.Saves;
+using UnityEngine;
 
 namespace YG
 {
@@ -16,6 +18,9 @@ namespace YG
         public int highScore = 0;
         public int currentScore = 0;
         public List<GameObjectData> gameObjectDataList = new();
-        public bool isFirstStart = true;
+        
+        public Card FutureCard { get; set; }
+        public string FutureCardSpritePath;
+
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using _Project.Scripts.UI;
 using UnityEngine;
 using YG;
 
@@ -14,10 +15,9 @@ namespace _Project.Scripts.Card
             { 2, 50 },
             { 3, 30 },
             { 4, 15 },
-            
             //Debug stats
             // { 3, 60 },
-            // { 4, 40 },
+            // { 5, 40 },
             // { 8, 40 },
             
         };
@@ -71,7 +71,7 @@ namespace _Project.Scripts.Card
             var nextCardComponent = nextCard.GetComponent<CardComponent>();
             nextCardComponent.Card = new Card(currentCard.Suit, currentCard.Rank + 1);
 
-            if (nextCardComponent.Card.Rank > 15)
+            if (nextCardComponent.Card.Rank > 14)
             {
                 nextCardComponent.Card.Rank = 2;
                 currentSuitIndex = (currentSuitIndex + 1) % Suits.Length;
@@ -90,7 +90,7 @@ namespace _Project.Scripts.Card
             var cardSprite = Resources.Load<Sprite>($"Sprites/{spriteName}");
             if (cardSprite != null)
             {
-                // Debug.Log($"Future card sprite {spriteName} successfully loaded.");
+                YandexGame.savesData.FutureCard = futureCard;
                 return (futureCard, cardSprite);
             }
             else

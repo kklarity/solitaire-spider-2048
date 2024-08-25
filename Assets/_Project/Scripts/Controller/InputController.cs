@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using _Project.Scripts.Card;
 using _Project.Scripts.TriggerEndGame;
@@ -26,21 +27,32 @@ namespace _Project.Scripts.Controller
         private Sprite _futureSprite;
 
         private bool _canSpawn = true;
+        private bool _moveEnded;
 
         public LayerMask layerMask;
         public LayerMask bottomMask;
         private Sprite _hitSprite;
+
+        public static Action onStepsEnded;
+        
+        
 
         private void Start()
         {
             _mainCam = Camera.main;
             _transform = GetComponent<Transform>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
-            UpdateFutureCardSprite();
+            // UpdateFutureCardSprite();
             StartCoroutine(CheckMoves());
-            if (YandexGame.savesData.isFirstStart)
+
+            if (YandexGame.savesData.gameObjectDataList.Count == 0)
             {
+                UpdateFutureCardSprite();
                 SpawnFirstCards();
+            }
+            else
+            {
+                SetSprite();
             }
         }
 
@@ -84,12 +96,29 @@ namespace _Project.Scripts.Controller
 
         public void Move(Vector3 mousePos)
         {
+            // mousePos = Input.mousePosition;
+            // mousePos = _mainCam.ScreenToWorldPoint(mousePos);
+            // var clampedX = Mathf.Clamp(mousePos.x, MIN_X, MAX_X);
+            // var roundedX = Mathf.Round(clampedX / 0.75f) * 0.75f;
+            // var targetPosition = new Vector3(roundedX, FIXED_Y_POSITION, transform.position.z);
+            // _transform.position = Vector3.Lerp(_transform.position, targetPosition, LERP_SPEED * Time.deltaTime);
+            
+            // mousePos = Input.mousePosition;
+            // mousePos = _mainCam.ScreenToWorldPoint(mousePos);
+            // var clampedX = Mathf.Clamp(mousePos.x, MIN_X, MAX_X);
+            // var roundedX = Mathf.Round(clampedX / 0.75f) * 0.75f;
+            // var targetPosition = new Vector3(roundedX, FIXED_Y_POSITION, transform.position.z);
+            // _transform.position = Vector3.Lerp(_transform.position, targetPosition, LERP_SPEED * Time.deltaTime);
+            //
+            // _moveEnded = Vector3.Distance(_transform.position, targetPosition) < 0.01f;
+            
+            // no lerp
             mousePos = Input.mousePosition;
             mousePos = _mainCam.ScreenToWorldPoint(mousePos);
             var clampedX = Mathf.Clamp(mousePos.x, MIN_X, MAX_X);
             var roundedX = Mathf.Round(clampedX / 0.75f) * 0.75f;
             var targetPosition = new Vector3(roundedX, FIXED_Y_POSITION, transform.position.z);
-            _transform.position = Vector3.Lerp(_transform.position, targetPosition, LERP_SPEED * Time.deltaTime);
+            _transform.position = targetPosition; // Прямое присвоение позиции
         }
 
         private IEnumerator SpawnCardWithDelay()
@@ -148,8 +177,6 @@ namespace _Project.Scripts.Controller
             }
 
             CardDealer.Instance.SpawnSpecificCardsAtPositions(cardPrefab, positions);
-
-            YandexGame.savesData.isFirstStart = false;
         }
 
         private void UpdateFutureCardSprite()
@@ -158,7 +185,8 @@ namespace _Project.Scripts.Controller
             if (futureCard != null && futureSprite != null)
             {
                 _futureCard = futureCard;
-                _futureSprite = futureSprite;
+                var spritePath = $"{_futureCard.Rank}{_futureCard.Suit[0].ToString().ToLower()}";
+                _futureSprite = Resources.Load<Sprite>($"Sprites/{spritePath}");
                 _spriteRenderer.sprite = _futureSprite;
                 transform.localScale = Vector3.zero;
                 transform.DOScale(new Vector3(0.6f, 0.6f, 1f), 0.2f);
@@ -167,6 +195,16 @@ namespace _Project.Scripts.Controller
             {
                 Debug.LogWarning("Future card sprite not loaded, skipping update.");
             }
+        }
+
+        private void SetSprite()
+        {
+            _futureCard = YandexGame.savesData.FutureCard;
+            var spritePath = $"{_futureCard.Rank}{_futureCard.Suit[0].ToString().ToLower()}";
+            _futureSprite = Resources.Load<Sprite>($"Sprites/{spritePath}");
+            _spriteRenderer.sprite = _futureSprite;
+            transform.localScale = Vector3.zero;
+            transform.DOScale(new Vector3(0.6f, 0.6f, 1f), 0.2f);
         }
         private IEnumerator CheckMoves()
         {
@@ -196,7 +234,7 @@ namespace _Project.Scripts.Controller
                             if (hitSuit == futureSuit && futureRank <= hitRank)
                             {
                                 movePossible = true;
-                                break; // Выход из цикла, если ход возможен
+                                break; 
                             }
                         }
                     }
@@ -207,11 +245,9 @@ namespace _Project.Scripts.Controller
         
             if (!movePossible)
             {
-                print($"<color=#e34234>==========================Ходов нет===================</color>");
+                onStepsEnded?.Invoke();
+                // print($"<color=#e34234>==========================Ходов нет===================</color>");
             }
         }
-
-
-
     }
 }
